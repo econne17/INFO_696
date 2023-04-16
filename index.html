@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ellen Connell's INFO696</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellen's example</title> 
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />   
 </head>
 <body>
-<p>HEY THIS IS ELLENS PROJECT HOW BOUT THAT!!!!</p>
+    
+    <!-- Header or Intro -->
+    <section class='filler'>
+        <h2 style="margin-top: 5rem;">
+            This is Ellen's wireframe
+        </h2>
+        <p>
+        </p>
+    </section>
+      
+    <!-- Scrolling elements start here -->
+    <section id='scrolly-overlay' >
+    
+        <div class='scrolly' style="background-color: bisque;">
+            
+            <!--  sticky graphic: This is what stays at the back   -->
+            <figure class='sticky'>
+                <div class='bar-outer'>
+                    <div class='bar-inner'>HEY THIS IS WHERE SOME VISUALIZATION COULD GO!</div>
+                </div>
+            </figure>
+            
+            <!--  step text goes here -> from D3 -->
+            <!-- Floating windows will come here from JS as article element-->
+            <!-- const article = scrolly.append("article") -->
+
+        </div>
+    
+    </section>
+      
+    <!-- Some more test here -->
+    <section class="filler">
+        <p>
+            Here is a chart using the same data. Same JS enter view method can be used for interacting with a single object as well. The graph is activated only when the scroll reaches the graph.
+        </p>
+        <p>
+            Data object is converted to an array and each section is represented with its corresponding width. 
+            <ol>
+                <li>Convert Data to list</li>
+                <li>Create DOM elements</li>
+                <li>Create axes</li>
+                <li>Create bars</li>
+            </ol>
+        </p>
+    </section>
+
+    <!-- bar.js uses this div to build a bar chart -->
+    <div class='bar-chart'></div>
+
+    <!-- Footer -->
+    <section class="filler">
+        <h2>
+            Useful Links
+        </h2>
+        <p>
+        </p>
+    </section>
 </body>
 </html>
