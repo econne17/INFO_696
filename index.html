@@ -1,69 +1,311 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ellen's example</title> 
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />   
+<html lang="en" data-version="1528749026774" class="loaded-publico loaded-atlas"><head>
+	<title>Ellen Connell INFO_696</title>
+	<style>
+		* {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box
+		}
+
+		p a{
+			display:inline;
+		}
+
+		.textblock {
+			height:800px;
+			overflow:hidden;
+		}
+		
+
+		body {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-tap-highlight-color: transparent;
+			background-color: #fafdf1;
+			color: #282828;
+			font-size: 16px;
+		}
+
+		h1 {
+			font-size: 40px;
+			line-height: 1.2;
+			margin-top: 1.5rem;
+			color:#142a9c;
+			font-family: Georgia, Times, "Times New Roman", serif;
+		}
+
+		h2 {
+			font-size: 26px;
+			line-height: 1.5;
+			margin-top: 1.5rem;
+			color:#3a3940;
+			font-family: Georgia, Times, "Times New Roman", serif;
+		}
+
+		h3 {
+			font-size: 24px;
+			line-height: 1.5;
+			margin-top: 3rem
+			font-family: Georgia, Times, "Times New Roman", serif;
+		}
+
+		h4 {
+			font-size: 17px;
+			line-height: 1.7;
+			margin-top: 1.5rem
+			font-family: Georgia, Times, "Times New Roman", serif;
+		}
+
+		h5 {
+			font-size: 16px;
+			line-height: 1.7;
+			margin-top: 1.5rem
+			font-family: Georgia, Times, "Times New Roman", serif;
+		}
+
+		h6 {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-top: 1.5rem
+			font-family: Georgia, Times, "Times New Roman", serif;
+		}
+
+		p {
+			margin: 1.5rem 0;
+			font-size: 16px;
+			line-height: 1.5;
+			font-family: 'Atlas Grotesk Web', Helvetica, Arial, sans-serif;
+		}
+
+		a {
+			text-decoration: none;
+			border-bottom: 1px solid #282828;
+			color: #282828
+		}
+
+		a:hover,
+		a:visited {
+			color: #282828
+		}
+
+		b,
+		strong {
+			font-weight: 700
+		}
+
+		em,
+		i {
+			font-style: italic
+		}
+
+
+		#scrolly-side .scrolly {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			max-width: 70rem;
+			margin: 3rem auto;
+			background-color: #fafdf1;
+			padding: 1rem
+		}
+
+		#scrolly-side .scrolly>* {
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1
+		}
+
+		#scrolly-side article {
+			padding-right: 1rem;
+			max-width: 30rem
+		}
+
+		#scrolly-side .scrolly article .step {
+			min-height: 67vh;
+			margin-bottom: 1rem;
+			background-color: #5b5b5b;
+			-webkit-transition: background-color 250ms ease-in-out;
+			-o-transition: background-color 250ms ease-in-out;
+			transition: background-color 250ms ease-in-out
+		}
+
+		#scrolly-side .scrolly article .step:last-of-type {
+			margin-bottom: 0
+		}
+
+		#scrolly-side .scrolly article .step.is-active {
+			background-color: teal
+		}
+
+		#scrolly-side .scrolly article .step p {
+			margin: 0;
+			padding: 1rem;
+			text-align: center;
+			font-weight: 400;
+			color: #f4f4f4;
+			font-size: 24px
+		}
+
+		#scrolly-side .scrolly figure.sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			width: 100%;
+			height: 475px;
+			background: #f4f4f4;
+			margin: 0;
+			left: 0;
+			top:0vh;
+		}
+
+		section {
+			margin: 1.5rem auto
+		}
+
+		#sources {
+			padding: 2rem;
+		}
+
+		#content {
+			padding-bottom: 3rem
+		}
+
+		#content pre {
+			display: block;
+			max-width: 38rem;
+			width: 90%;
+			font-size: 14px
+		}
+
+		figure.sticky figcaption.top {
+			font-weight: bolder;
+		}
+
+		.viz {
+			visibility:hidden;
+			opacity:0;
+			height:0px;
+		}
+
+		.viz body{
+			margin:0px;
+			background-color: #FAFDF1;
+		}
+
+		.current{
+			visibility: visible;
+			height:100%;
+			opacity:1;
+		}
+		h6 {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			margin-top: 0.5rem;
+			margin-bottom: 0.2rem;
+		}
+	</style>
+	<script>
+		function toggleImage(index) {
+			var current = document.getElementsByClassName('current')[0]
+			var next = document.getElementsByClassName('viz')[index]
+			current.classList.remove('current')
+			next.classList.add('current')
+		}
+
+		function scrollPos() {
+			var scroll_pos =  window.scrollY - 550
+			var position_array = [0,1,2,3,4,4,5,5,6,6]
+			if (scroll_pos > 0) {
+				var step_index = Math.floor(scroll_pos/400)
+				if (step_index > 9) {
+					step_index = 9
+				}
+				toggleImage(position_array[step_index])
+			}
+		}
+	</script>
+
+	<!-- boilerplate.css -->
 </head>
-<body>
-    
-    <!-- Header or Intro -->
-    <section class='filler'>
-        <h2 style="margin-top: 5rem;">
-            This is Ellen's wireframe
-        </h2>
-        <p>
-        </p>
-    </section>
-      
-    <!-- Scrolling elements start here -->
-    <section id='scrolly-overlay' >
-    
-        <div class='scrolly' style="background-color: bisque;">
-            
-            <!--  sticky graphic: This is what stays at the back   -->
-            <figure class='sticky'>
-                <div class='bar-outer'>
-                    <div class='bar-inner'>HEY THIS IS WHERE SOME VISUALIZATION COULD GO!</div>
-                </div>
-            </figure>
-            
-            <!--  step text goes here -> from D3 -->
-            <!-- Floating windows will come here from JS as article element-->
-            <!-- const article = scrolly.append("article") -->
+<body class="tk-publico" onscroll="scrollPos();"><main>
+		<section id="scrolly-side">
+			<div class="scrolly">
+			<div>	
+			<h1>Yale University Staffing: Fall 2002-Fall 2021</h1>
+			<h6><i>Ellen Connell, INFO 696, Spring 2023</i></h6></div></div>
+		</section>
+		<section id="scrolly-side">
+			<div class="scrolly tk-atlas">
+			<article>
+			<div><h2>Introduction</h2>
+			<p>In recent years, “administrative bloat” has been a frequent focus of op-eds, blog posts and critiques including an <a href="https://yaledailynews.com/blog/2021/11/10/reluctance-on-the-part-of-its-leadership-to-lead-yales-administration-increases-by-nearly-50-percent/"> article by the Yale News in November 2021</a> that cited faculty members lamenting the “proliferation of administrators” in “two decades of rapid expansion” as effectively “outpacing growth in student enrollment.”</p>
+			<p>To explore this articles’ thesis pulled from the total headcounts cited in Yale’s <a href="https://your.yale.edu/sites/default/files/2002-2003_annual_financial_report_0.pdf">financial</a> <a href="https://your.yale.edu/sites/default/files/2020-2021-yale-university-annual-financial-report.pdf">reports</a>, I compiled and charted <a href="https://nces.ed.gov/ipeds/use-the-data">Integrated Postsecondary Education Data System (IPEDS) surveys</a>, pulling student enrollment data from the <a href="https://nces.ed.gov/ipeds/use-the-data/survey-components/8/fall-enrollment">Fall Enrollment surveys</a> and employee data from the <a href="https://nces.ed.gov/ipeds/use-the-data/survey-components/3/human-resources">Fall Staff surveys</a> for the period identified in the Yale News article: Fall 2002 - Fall 2021. </p></div>
+		</article><figure><img style="width:100%" src="5_image/YaleDailyNews.png" /></figure></div>
+		</section>
+		<section id="scrolly-side">
+			<div class="scrolly tk-atlas">
+				<article>
+					<div class="textblock" data-index="0">
+                        <h2>A period of growth, overall</h2>
+                        <p>Except for temporary dips in student enrollment due to the 2007-2008 financial crisis and COVID-19 pandemic, student enrollment has steadily climbed at Yale from Fall 2002 - Fall 20221, with total staffing following student enrollments’ upward climb (Figure 1). </p>
+                        <p>Filtering total staff by type, defined by a position’s primary function as either instructional/research or not, illustrates that both the academic and non academic staff have both increased over the period.</p>
+                        <p>Segmenting by staff type also illustrates that non academic staff steadily exceeds the number of instructional or research staff over the period with non-instructional staff increasing from 4,279 in Fall 2002 to 6,261 in Fall 2021 compared to 1309 and 2153.</p>
+                        <p>But how does this increase in staff compare to the increase in student enrollment over the period?</p>
+					</div>
+					<div  class="textblock" data-index="1">
+						<h2>An ‘outsized’ increase in administrators? </h2>
+						<p>To explore the relationship between student and staff FTEs over the period, I calculated and plotted the student to staff ratio, segmented by staff type, with the assumption that if the growth in staff is directly proportional to growth in enrollment, the ratio of students to staff should remain the consistent over the period.</p>
+						<p>For all staff, the ratio generally holds between 2 and 1.5 students per 1 staff member, with the greatest change in the years where enrollment is drastically reduced in 2008 and 2020, respectively.</p>
+						<p>Filtering by staff type and charting the changes in ratio and between instructional and non-instructional staff illustrates that ratio for both instructional and non instructional staff reduces over the period, signaling that the growth in both types of staff has outpaced the growth in students (Figure 2).</p>
+					</div>
+					<div class="textblock" data-index="2">
+						<h2>Instructional staff grown the most</h2>
+						<p>However, it is actually the student to instructional staff ratio that shows the greatest variability and net change over the period with a dropping of 8.6 in Fall 2001 to 6.7 in Fall 2021 compared to 2.63 and 2.31, respectively.</p>
+						<p>Charting the cumulative percentage change further illustrates that contrary to the reports of the ‘proliferation of administrators’ in the ‘last two decades’ at Yale, the growth in instructional and research dedicated staff has grown the most in the last 20 years (Figure 3).</p>
+					</div>
+					<div class="textblock" data-index="3">
+						<h2>How does Yale compare?</h2>
+						<p>Although IPEDS data did not support the direct claim that the last two decades has seen a significant change in the number of administrators, Yale’s student to staff ratio is significantly smaller than both their average peer institution (research intensive institutions) and the overall average of all degree-granting, four-year nonprofit institutions (Figure 4), signaling that there is in fact a “proliferation” of administrators at Yale in comparison to others. </p>
+						<p>Furthermore, the difference in the student to staff ratio between the average of all research institutions vs. all institutions illustrates that the number of staff to students varies by institutional type with research institutions providing expanded programs, research infrastructure, and clinical staff.</p>
+					</div>
+					<div class="textblock" data-index="4">
+						<h2>Why it matters</h2>
+						<p>To members of the Yale faculty, a bloated administration size inflicts unnecessary costs and interferes with faculty teaching, spreading the burden of leadership and adding excessive regulation.</p>
+						<p>As Professor David Bromwich notes, “Yale, like many other universities, clearly now wants to be known not only as a place for teaching, learning, and research, but also as a home, a community, an innovative corporate entity. The swollen self-image requires expanded oversight, and administrators are the overseers.”</p>
+					</div>
+				</article>
+				<!-- Here I pull in all of the plotly visualizations via the object anchor. Plotly provides html files that can be templated directly into this website
 
-        </div>
-    
-    </section>
-      
-    <!-- Some more test here -->
-    <section class="filler">
-        <p>
-            Here is a chart using the same data. Same JS enter view method can be used for interacting with a single object as well. The graph is activated only when the scroll reaches the graph.
-        </p>
-        <p>
-            Data object is converted to an array and each section is represented with its corresponding width. 
-            <ol>
-                <li>Convert Data to list</li>
-                <li>Create DOM elements</li>
-                <li>Create axes</li>
-                <li>Create bars</li>
-            </ol>
-        </p>
-    </section>
+				I apply tags based on the scroll position so that I can toggle between the relevant visualizations. When the scroll position moves to discrete points in the page, the "current tag is added to the vislization that should be displayed. That callback function is on line "
+				 -->
+				<figure class="sticky" style="">
+					<div class="viz current" style="text-align: center;"><object id="viz1" type="text/html"  style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure1.html"></object></div>
+					<div class="viz"><object id="viz6" type="text/html" style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure1.5.html"></object></div>
+					<div class="viz"><object id="viz2" type="text/html" style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure2.html"></object></div>
+					<div class="viz"><object id="viz7" type="text/html" style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure2.5.html"></object></div>
+					<div class="viz"><object id="viz3" type="text/html" style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure3.html"></object></div>
+					<div class="viz"><object id="viz4" type="text/html" style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure4.html"></object></div>
+					<div class="viz"><object id="viz5" type="text/html" style="width:624px;height:524px;border:none;margin:0px" data="4_visualizations/figure5.html"></object></div>
+				</figure>
+			</div>
+		</section>
 
-    <!-- bar.js uses this div to build a bar chart -->
-    <div class='bar-chart'></div>
+		<section id="scrolly-side" class="sources">
+			<div class="scrolly"><div>
+			<h6><i>Sources</i></h6>
+			<p>
+				<i>Philip Mousavizadeh 1:23 am, Nov 10. “A ‘Proliferation of Administrators’: Faculty Reflect on Two Decades of Rapid Expansion.” Yale Daily News, December 8, 2021. <br />
+				<a href="https://yaledailynews.com/blog/2021/11/10/reluctance-on-the-part-of-its-leadership-to-lead-yales-administration-increases-by-nearly-50-percent/">
+				https://yaledailynews.com/blog/2021/11/10/reluctance-on-the-part-of-its-leadership-to-lead-yales-administration-increases-by-nearly-50-percent/
+				</a> 
+			</i>	
+			</p>
+			<p><i>National Center for Education Statistics (NCES) IPEDS Data Center<br />
+				<a href="https://nces.ed.gov/ipeds/use-the-data">https://nces.ed.gov/ipeds/use-the-data</a> </i>
+			</p>
+			<p><i>All source data hosted on Github: <a href="https://github.com/econne17/INFO_696">https://github.com/econne17/INFO_696</a></i></p></div></div>
+		</section>
 
-    <!-- Footer -->
-    <section class="filler">
-        <h2>
-            Useful Links
-        </h2>
-        <p>
-        </p>
-    </section>
-</body>
+	</main>
+	</body>
 </html>
